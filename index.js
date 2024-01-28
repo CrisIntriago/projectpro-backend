@@ -13,7 +13,7 @@ dotenv.config();
 
 conectarDB();
 
-/*// Configurar CORS
+/*// Configurar CORS */
 const whitelist = [process.env.FRONTEND_URL];
 
 const corsOptions = {
@@ -29,7 +29,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-*/
+
 
 
 // Routing
