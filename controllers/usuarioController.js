@@ -19,12 +19,12 @@ const registrar = async (req, res) => {
     await usuario.save();
 
     // Enviar el email de confirmacion
-    /*emailRegistro({
+    emailRegistro({
       email: usuario.email,
       nombre: usuario.nombre,
       token: usuario.token,
     });
-    */
+    
     res.json({
       msg: "Usuario Creado Correctamente, Revisa tu Email para confirmar tu cuenta",
     });
