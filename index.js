@@ -13,7 +13,7 @@ dotenv.config();
 
 conectarDB();
 
-// Configurar CORS
+/*// Configurar CORS
 const whitelist = [process.env.FRONTEND_URL];
 
 const corsOptions = {
@@ -29,6 +29,8 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+*/
+
 
 // Routing
 app.use("/api/usuarios", usuarioRoutes);
@@ -39,7 +41,7 @@ const PORT = process.env.PORT || 4000;
 const servidor = app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
-
+/*
 // Socket.io
 import { Server } from "socket.io";
 
@@ -49,6 +51,7 @@ const io = new Server(servidor, {
     origin: process.env.FRONTEND_URL,
   },
 });
+
 
 io.on("connection", (socket) => {
   // console.log("Conectado a socket.io");
@@ -78,3 +81,5 @@ io.on("connection", (socket) => {
     socket.to(proyecto).emit("nuevo estado", tarea);
   });
 });
+
+*/
