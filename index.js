@@ -41,7 +41,7 @@ const PORT = process.env.PORT || 4000;
 const servidor = app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
-/*
+
 // Socket.io
 import { Server } from "socket.io";
 
@@ -82,4 +82,4 @@ io.on("connection", (socket) => {
   });
 });
 
-*/
+
