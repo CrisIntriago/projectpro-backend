@@ -1,4 +1,34 @@
 import nodemailer from "nodemailer";
+import emailjs from '@emailjs/nodejs';
+
+
+
+export const emailRegistro2 = async (datos) => {
+  const { email, nombre, token } = datos;
+
+  let params= {
+    nombre : nombre,
+    email : email,
+    url: `${process.env.FRONTEND_URL}/confirmar/${token}`
+  }
+
+  emailjs.send("service_ivqx14o","template_iw67m7n", params, {
+    publicKey: '8IQ29ohAkQUmBGJkQ',
+    privateKey: 'VT299bZkuVK23ksTafTTD', // optional, highly recommended for security reasons
+  })
+  .then(
+    (response) => {
+      console.log('Mail sent!', response.status, response.text);
+    },
+    (err) => {
+      console.log('Mail could not be sent :(', err);
+    },
+  );
+
+};
+
+
+
 
 export const emailRegistro = async (datos) => {
   const { email, nombre, token } = datos;
